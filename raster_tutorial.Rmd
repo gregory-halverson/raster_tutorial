@@ -24,3 +24,71 @@ library(sp)
 library(rgdal)
 ```
 
+## Load Raster
+
+```{r load_raster}
+dem <- raster('20170112222539_1989219947.tif')
+dem
+```
+
+## Min/Max Values
+
+Use `setMinMax` to define the minimum and maximum values for the raster.
+
+```{r min_max}
+dem <- setMinMax(dem)
+dem
+```
+
+Use `cellStats` to check the range of values in the raster.
+
+```{r check_min}
+cellStats(dem, min)
+```
+
+```{r check_max}
+cellStats(dem, max)
+```
+
+```{r check_max}
+cellStats(dem, range)
+```
+
+## Coordinate Reference System
+
+Check the projection using `@crs`.
+
+```{r projection}
+dem@crs
+```
+
+## Extent 
+
+Check the extent of the raster using `@extent`.
+
+```{r extent}
+dem@extent
+```
+
+## Plotting
+
+Plot the raster using `plot`.
+
+```{r plot}
+plot(dem, col=terrain.colors(30))
+```
+
+Or using `image`.
+
+```{r image}
+image(dem, col=terrain.colors(30))
+```
+
+## Distribution
+
+Check the distribution of values in the raster using `hist`.
+
+```{r histogram, echo=FALSE}
+hist(dem)
+```
+
