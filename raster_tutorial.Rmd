@@ -50,7 +50,7 @@ cellStats(dem, min)
 cellStats(dem, max)
 ```
 
-```{r check_max}
+```{r check_range}
 cellStats(dem, range)
 ```
 
