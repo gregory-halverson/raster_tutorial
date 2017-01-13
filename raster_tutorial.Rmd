@@ -9,12 +9,18 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Origins
+
+This tutorial is an interpretation of the neon data skills tutorial at:
+http://neondataskills.org/R/Raster-Data-In-R/
+
 ## Load Libraries
 
-The basic libraries needed for working with rasters in R are `raster` and `rgdal`.
+The basic libraries needed for working with rasters in R are `raster`, `sp`, and `rgdal`.
 
 ```{r load_libraries}
 library(raster)
+library(sp)
 library(rgdal)
 ```
 
