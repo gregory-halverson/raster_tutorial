@@ -35,25 +35,16 @@ dem
 
 ## Min/Max Values
 
-Use `setMinMax` to define the minimum and maximum values for the raster.
-
-```{r min_max}
-dem <- setMinMax(dem)
-dem
-```
-
-Use `cellStats` to check the range of values in the raster.
+Use `minValue` and `maxValue` to check the range of values in the raster.
 
 ```{r check_min}
-cellStats(dem, min)
+minValue(dem)
 ```
+
+Use `maxValue` to check 
 
 ```{r check_max}
-cellStats(dem, max)
-```
-
-```{r check_range}
-cellStats(dem, range)
+maxValue(dem)
 ```
 
 ## Coordinate Reference System
@@ -88,7 +79,7 @@ image(dem, col=terrain.colors(30))
 
 Or using `gplot`.
 
-```{r}
+```{r gplot}
 theme_set(theme_bw())
 gplot(dem) + 
   geom_tile(aes(fill = value)) +
