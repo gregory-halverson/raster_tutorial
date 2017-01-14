@@ -56,18 +56,18 @@ cellStats(dem, range)
 
 ## Coordinate Reference System
 
-Check the projection using `@crs`.
+Check the projection using `crs`.
 
 ```{r projection}
-dem@crs
+crs(dem)
 ```
 
 ## Extent 
 
-Check the extent of the raster using `@extent`.
+Check the extent of the raster using `extent`.
 
 ```{r extent}
-dem@extent
+extent(dem)
 ```
 
 ## Plotting
