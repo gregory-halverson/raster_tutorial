@@ -19,9 +19,11 @@ http://neondataskills.org/R/Raster-Data-In-R/
 The basic libraries needed for working with rasters in R are `raster`, `sp`, and `rgdal`.
 
 ```{r load_libraries}
-library(raster)
 library(sp)
 library(rgdal)
+library(raster)
+library(ggplot2)
+library(rasterVis)
 ```
 
 ## Load Raster
@@ -83,6 +85,18 @@ Or using `image`.
 ```{r image}
 image(dem, col=terrain.colors(30))
 ```
+
+Or using `gplot`.
+
+```{r}
+theme_set(theme_bw())
+gplot(dem) + 
+  geom_tile(aes(fill = value)) +
+  facet_wrap(~ variable) +
+  scale_fill_gradient(low = 'white', high = 'blue') +
+  coord_equal()
+```
+
 
 ## Distribution
 
